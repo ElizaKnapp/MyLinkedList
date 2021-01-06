@@ -10,25 +10,25 @@ public class Node {
     return data;
   }
   public String setData(String value) {
-    temp = data;
+    String temp = data;
     data = value;
     return temp;
   }
 
-  public String getNext() {
+  public Node getNext() {
     return next;
   }
-  public String setNext(String value) { //returns the removed value
-    temp = next;
+  public Node setNext(Node value) { //returns the removed value
+    Node temp = next;
     next = value;
     return temp;
   }
 
-  public String getPrev() {
+  public Node getPrev() {
     return prev;
   }
-  public String setPrev(String value) { //returns the removed value
-    temp = prev;
+  public Node setPrev(Node value) { //returns the removed value
+    Node temp = prev;
     prev = value;
     return temp;
   }
