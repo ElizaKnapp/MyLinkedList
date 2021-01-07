@@ -35,20 +35,19 @@ public class MyLinkedList {
      end = toAdd;
    }
    else if (index == 0) {  //head node switch
-     Node holder = new Node(start.getData()); //aka the og start
-     start.setPrev(toAdd); //original start now points back to toAdd
-     start = toAdd; //start becomes toAdd
-     start.setNext(holder);  //next to start becomes old start
+     Node holder = new Node(start.getData());
+     start.setPrev(toAdd);
+     start = toAdd;
+     start.setNext(holder);
    }
    else if (index == size) { //tail node switch
-     Node holder = end;
+     toAdd.setPrev(end);
      end.setNext(toAdd);
      end = toAdd;
-     end.setPrev(holder);
    }
    else {  //all other nodes
      Node theOneMovedRight = findNode(index);
-     theOneMovedRight.setPrev(toAdd); //so now it has a reference to the new added ones
+     theOneMovedRight.setPrev(toAdd);
      Node theOneMovedLeft = findNode(index - 1);
      theOneMovedLeft.setNext(toAdd);
      toAdd.setNext(theOneMovedRight);
@@ -82,6 +81,17 @@ public class MyLinkedList {
      if (i == size - 1) outline += travel.getData();
      else outline += travel.getData() + ", ";
      travel = travel.getNext();
+   }
+   return outline + "]";
+ }
+
+ public String toStringReversed() {
+   String outline = "[";
+   Node travel = end;
+   for (int i = size - 1; i >= 0; i--) {
+     if (i == 0) outline += travel.getData();
+     else outline += travel.getData() + ", ";
+     travel = travel.getPrev();
    }
    return outline + "]";
  }
