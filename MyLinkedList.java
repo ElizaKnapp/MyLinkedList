@@ -26,6 +26,7 @@ public class MyLinkedList {
  }
 
  public void add(int index, String value) {
+   //remember IndexOutOfBoundsException
    Node toAdd = new Node(value);
    if (size == 0) { //empty list
      start = toAdd;
@@ -55,11 +56,19 @@ public class MyLinkedList {
  }
 
  public String get(int index) {
+   //remember IndexOutOfBoundsException
    Node found = findNode(index);
    return found.getData();
  }
 
- public String set(int index, String value);
+ public String set(int index, String value) {
+   //remember IndexOutOfBoundsException
+   Node replaced = findNode(index);
+   holder = replaced.getData();
+   replaced.setData(value);
+   return holder;
+ }
+
  public String toString();
  //Any helper method that returns a Node object MUST BE PRIVATE!
  private Node findNode(int index) {
