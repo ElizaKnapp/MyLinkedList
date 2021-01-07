@@ -26,7 +26,7 @@ public class MyLinkedList {
  }
 
  public void add(int index, String value) {
-   if (index < 0 || index >= size) {
+   if (index < 0 || index > size) {
      throw new IndexOutOfBoundsException("Index out of bounds");
    }
    Node toAdd = new Node(value);
@@ -40,7 +40,7 @@ public class MyLinkedList {
      start = toAdd; //start becomes toAdd
      start.setNext(holder);  //next to start becomes old start
    }
-   else if (index == size) { //tail node switch
+   else if (index == size - 1) { //tail node switch
      Node holder = end; //aka the og end
      end.setNext(toAdd);
      end = toAdd;
@@ -83,24 +83,21 @@ public class MyLinkedList {
      else outline += travel.getData() + ", ";
      travel = travel.getNext();
    }
-   return outline;
+   return outline + "]";
  }
  //Any helper method that returns a Node object MUST BE PRIVATE!
  private Node findNode(int index) {
    //returns node at given index
    Node travel = start.getNext();
    if (index == 0) return start;
-   if (index == size) return end;
+   if (index == size - 1) return end;
    else {
-     Node holder = travel.getNext();
      int i = 1;
-     while (i <= index) {
-       holder = travel.getNext();
-       travel = holder;
+     while (i < index) {
+       travel = travel.getNext();
        i++;
      }
      return travel;
    }
  }
-
 }
