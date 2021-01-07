@@ -40,8 +40,8 @@ public class MyLinkedList {
      start = toAdd; //start becomes toAdd
      start.setNext(holder);  //next to start becomes old start
    }
-   else if (index == size - 1) { //tail node switch
-     Node holder = end; //aka the og end
+   else if (index == size) { //tail node switch
+     Node holder = end;
      end.setNext(toAdd);
      end = toAdd;
      end.setPrev(holder);
