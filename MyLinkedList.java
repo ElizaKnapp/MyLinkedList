@@ -35,10 +35,9 @@ public class MyLinkedList {
      end = toAdd;
    }
    else if (index == 0) {  //head node switch
-     Node holder = new Node(start.getData());
+     toAdd.setNext(start);
      start.setPrev(toAdd);
      start = toAdd;
-     start.setNext(holder);
    }
    else if (index == size) { //tail node switch
      toAdd.setPrev(end);
