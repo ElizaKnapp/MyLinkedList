@@ -25,9 +25,29 @@ public class MyLinkedList {
    return true;
  }
 
- public void add(int index, String value);
+ public void add(int index, String value) {
+
+ }
+
  public String get(int index);
  public String set(int index, String value);
  public String toString();
  //Any helper method that returns a Node object MUST BE PRIVATE!
+ private Node findNode(int index) {
+   //returns node at given index
+   Node travel = start.getNext();
+   if (index == 0) return start;
+   if (index == size) return end;
+   else {
+     Node holder = travel.getNext();
+     int i = 1;
+     while (i <= index) {
+       holder = travel.getNext();
+       travel = holder;
+       i++;
+     }
+     return travel;
+   }
+ }
+
 }
