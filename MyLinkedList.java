@@ -36,7 +36,7 @@ public class MyLinkedList {
      Node holder = new Node(start.getData()); //aka the og start
      start.setPrev(toAdd); //original start now points back to toAdd
      start = toAdd; //start becomes toAdd
-     start.getNext(holder);  //next to start becomes old start
+     start.setNext(holder);  //next to start becomes old start
    }
    else if (index == size) { //tail node switch
      Node holder = end; //aka the og end
@@ -64,12 +64,21 @@ public class MyLinkedList {
  public String set(int index, String value) {
    //remember IndexOutOfBoundsException
    Node replaced = findNode(index);
-   holder = replaced.getData();
+   String holder = replaced.getData();
    replaced.setData(value);
    return holder;
  }
 
- public String toString();
+ public String toString() {
+   String outline = "[";
+   Node travel = start;
+   for (int i = 0; i < size; i++) {
+     if (i == size - 1) outline += travel.getData();
+     else outline += travel.getData() + ", ";
+     travel = travel.getNext();
+   }
+   return outline;
+ }
  //Any helper method that returns a Node object MUST BE PRIVATE!
  private Node findNode(int index) {
    //returns node at given index
