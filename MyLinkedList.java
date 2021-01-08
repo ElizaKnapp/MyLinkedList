@@ -126,10 +126,23 @@ public class MyLinkedList {
    return lost;
  }
 
- public void extend() {
-   //CLEAR out the second list
-   //no loops
-   //cases to check- size 0, 1, 2, and 3 then you are good
+ public void extend(MyLinkedList other) {
+   if (other.size == 0) {
+   }
+   else if (size == 0) {
+     start = other.start;
+     end = other.end;
+     size = size + other.size;
+   }
+   else {
+     end.setNext(other.start);
+     other.start.setPrev(end);
+     end = other.end;
+     size = size + other.size;
+     other.size = 0;
+     other.start = null;
+     other.end = null;
+   }
  }
  //Any helper method that returns a Node object MUST BE PRIVATE!
  private Node findNode(int index) {
