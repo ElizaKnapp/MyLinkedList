@@ -39,5 +39,41 @@ public class ETester {
     tester.add(0, "first");
     tester.add(2, "last");
     System.out.println(tester.toString());
+
+    //testing extend
+      //size = 0
+      MyLinkedList size0 = new MyLinkedList();
+        //case other.size == 0
+        MyLinkedList size0T = new MyLinkedList();
+        size0.extend(size0T);
+        System.out.println("both below should be empty");
+        System.out.println(size0.toString());
+        System.out.println(size0T.toString());
+        // case other.size = 1
+        MyLinkedList size1T = new MyLinkedList();
+        size1T.add("element1");
+        size0.extend(size1T);
+        System.out.println("1- element 2- empty");
+        System.out.println(size0.toString());
+        System.out.println(size1T.toString());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 }

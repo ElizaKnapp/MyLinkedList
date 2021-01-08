@@ -132,17 +132,16 @@ public class MyLinkedList {
    else if (size == 0) {
      start = other.start;
      end = other.end;
-     size = size + other.size;
    }
    else {
      end.setNext(other.start);
      other.start.setPrev(end);
      end = other.end;
-     size = size + other.size;
-     other.size = 0;
-     other.start = null;
-     other.end = null;
    }
+   size = size + other.size;
+   other.size = 0;
+   other.start = null;
+   other.end = null;
  }
  //Any helper method that returns a Node object MUST BE PRIVATE!
  private Node findNode(int index) {
