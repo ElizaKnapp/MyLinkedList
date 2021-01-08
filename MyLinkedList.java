@@ -94,6 +94,37 @@ public class MyLinkedList {
    }
    return outline + "]";
  }
+
+ public String remove(int index) {
+   if (index < 0 || index >= size) {
+     throw new IndexOutOfBoundsException("Index out of bounds");
+   }
+   String lost = "";
+   if (index == 0) { //removing head- to remove the first- set joshua to head. Joshua.prev = david.prev
+     Node newStart = findNode(1);
+     lost = start.getData();
+     start = newStart;
+   }
+   else if (index == size - 1) {//removing tial
+     Node newEnd = findNode(size - 2);
+     lost = end.getData();
+     end = newEnd;
+   }
+   else if (size == 1) {//removing from a size 1 MyLinkedList
+     
+   }
+   else {   //removing from the middle
+
+   }
+   size --;
+   return lost;
+ }
+
+ public void extend() {
+   //CLEAR out the second list
+   //no loops
+   //cases to check- size 0, 1, 2, and 3 then you are good
+ }
  //Any helper method that returns a Node object MUST BE PRIVATE!
  private Node findNode(int index) {
    //returns node at given index
