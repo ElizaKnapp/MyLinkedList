@@ -83,7 +83,6 @@ public class ETester {
         System.out.println(size0.toString());
         System.out.println(size3T.toString());
 
-        */
       MyLinkedList size3 = new MyLinkedList();
       size3.add("1");
       size3.add("2");
@@ -116,7 +115,25 @@ public class ETester {
       System.out.println(size3.toString());
       System.out.println(size3T.toString());
 
+*/
+MyLinkedList a = new MyLinkedList();
+    MyLinkedList b = new MyLinkedList();
+    for(int i = 0; i < 10; i++){
+      if(i < 5){
+        a.add(i+"");
+      }else{
+        b.add(i+"");
+      }
+    }
+    System.out.println();
+    System.out.println("A:"+a+a.size());
+    System.out.println("B:"+b+b.size());
 
+    a.extend(b);
+      //System.out.println("A:"+a+a.size());
+      //System.out.println("B:"+b+b.size());
+    System.out.println("A reversed:"+a.toStringReversed()+a.size());
+    System.out.println("B reversed:"+b.toStringReversed()+b.size());
 
 
 
