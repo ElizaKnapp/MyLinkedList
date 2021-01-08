@@ -111,10 +111,16 @@ public class MyLinkedList {
      end = newEnd;
    }
    else if (size == 1) {//removing from a size 1 MyLinkedList
-     
+     start = null;
+     end = null;
    }
    else {   //removing from the middle
-
+     Node theRemoved = findNode(index);
+     Node before = findNode(index - 1);
+     Node after = findNode(index + 1);
+     before.setNext(theRemoved.getNext());
+     after.setPrev(theRemoved.getPrev());
+     lost = theRemoved.getData();
    }
    size --;
    return lost;
