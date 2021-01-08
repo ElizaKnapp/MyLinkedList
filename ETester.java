@@ -84,43 +84,38 @@ public class ETester {
         System.out.println(size3T.toString());
 
         */
-      MyLinkedList size2 = new MyLinkedList();
-      size2.add("1");
-      size2.add("2");
+      MyLinkedList size3 = new MyLinkedList();
+      size3.add("1");
+      size3.add("2");
+      size3.add("3");
       //case other.size == 0
       MyLinkedList size0T = new MyLinkedList();
-      size2.extend(size0T);
-      System.out.println("2 and 0");
-      System.out.println(size2.toString());
+      size3.extend(size0T);
+      System.out.println("3 and 0");
+      System.out.println(size3.toString());
       System.out.println(size0T.toString());
       // case other.size = 1
       MyLinkedList size1T = new MyLinkedList();
-      size1T.add("element1");
-      size2.extend(size1T);
-      System.out.println("3 and 0");
-      System.out.println(size2.toString());
+      size1T.add("4");
+      size3.extend(size1T);
+      System.out.println("4 and 0");
+      System.out.println(size3.toString());
       System.out.println(size1T.toString());
       // case other.size = 2
       MyLinkedList size2T = new MyLinkedList();
-      size2T.add("element1");
-      size2T.add("element2");
-      size2.remove(0);
-      size2.extend(size2T);
-      System.out.println("4 and 0");
-      System.out.println(size2.toString());
+      size2T.add("5");
+      size3.extend(size2T);
+      System.out.println("5 and 0");
+      System.out.println(size3.toString());
       System.out.println(size2T.toString());
       // case other.size = 2
       MyLinkedList size3T = new MyLinkedList();
-      size3T.add("element1");
-      size3T.add("element2");
-      size3T.add("element3");
-      size2.remove(0);
-      size2.remove(0);
-      size2.extend(size3T);
-      System.out.println("5 and 0");
-      System.out.println(size2.toString());
+      size3T.add("6");
+      size3.extend(size3T);
+      System.out.println("6 and 0");
+      System.out.println(size3.toString());
       System.out.println(size3T.toString());
-  
+
 
 
 
